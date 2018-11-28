@@ -1,2 +1,5 @@
 <h1>Airlines#index</h1>
 <p>Find me in app/views/airlines/index.html.erb</p>
+<% @airlines.each_with_index do |airline, i|  %>
+<h2><%= i+1 %>:<%= airline.name %></h2>
+<% end %>
