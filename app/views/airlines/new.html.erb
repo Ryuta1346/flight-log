@@ -1,0 +1,35 @@
+<h1>Airlines#new</h1>
+<p>Find me in app/views/airlines/new.html.erb</p>
+<%= form_for(@airline) do |f| %>
+  <div class="form-row">
+    <div class="form-group">
+      <%= f.label :Airline_Name %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Airline Name", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :headquarters %>
+      <%= f.text_field :headquarters, autofocus: true, autocomplete: "headquarters", placeholder: "Headquarters", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Base %>
+      <%= f.text_field :base, autofocus: true, autocomplete: "base", placeholder: "Base", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Date %>
+      <%= f.date_select :foundation %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Main_Line %>
+      <%= f.text_field :main_line, autofocus: true, autocomplete: "main_line", placeholder: "Main Line", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Summary %>
+      <%= f.text_area :summary, autofocus: true, autocomplete: "Summary", placeholder: "Summary", class: "form-control" %>
+    </div>
+  </div>
+<% end %>

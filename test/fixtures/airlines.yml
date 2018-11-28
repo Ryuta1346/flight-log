@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  headquarters: MyString
+  base: MyString
+  foundation: 
+  main_line: MyString
+
+two:
+  name: MyString
+  headquarters: MyString
+  base: MyString
+  foundation: 
+  main_line: MyString
