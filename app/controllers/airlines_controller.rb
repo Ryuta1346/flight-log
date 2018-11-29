@@ -23,10 +23,18 @@ class AirlinesController < ApplicationController
   end
 
   def edit
+    @airline = Airline.find(params[:id])
   end
 
   def update
-
+    @airline = Airline.find(params[:id])
+    if @airline.update_attributes(airline_params)
+      flash[:success] = "Airline Information Added!"
+      redirect_to @airline
+    else
+      flash[:danger] = "Airline Information Not Added!"
+      render @airline
+    end
   end
 
   def destroy
@@ -34,7 +42,8 @@ class AirlinesController < ApplicationController
   end
 
   private
-  def airline_params
-    params.require(:airline).permit(:name, :headquarters, :base, :foundation, :main_line, :summary)
-  end
+
+    def airline_params
+      params.require(:airline).permit(:name, :headquarters, :base, :foundation, :main_line, :summary)
+    end
 end

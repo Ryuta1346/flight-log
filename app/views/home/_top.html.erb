@@ -1,32 +1,4 @@
-<div style="height: 400px; background-color: #DADADA; width: 80%; margin: 0 auto; border-radius: 10px;">
-  <h2 style="text-align: center">航空会社名:日本航空</h2>
-  <div style="width: 80%; margin: 0 auto; text-align: center;">
-    <span>航空会社の設立年:〇〇〇〇年〇月</span>　<span>航空会社の本社場所:日本 東京都</span><br />
-    <span>航空会社の拠点空港:羽田国際空港/成田国際空港</span> <span>航空会社のメイン路線:</span>
-    <p>航空会社の概要</p>
-    <div style="background-color: #F7F7F7; width: 80%; border-radius: 10px; height: 200px; margin: 0 auto;">
-      ここには航空会社の概要を書く。<br />
-
-      特徴や歴史、ちょっとした小噺など。
-    </div>
-  </div>
-
-</div>
-
-<div style="background-color: #CCCCCC; width: 80%; margin: 0 auto; height: 200px; margin-top: 10px; border-radius: 10px;">
-  ここにはSkyscannerAPIを使って表示している航空会社を利用した航空券の価格情報などを表示
-  <%# <a href="http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=065311a18e596a9374f70b0c29b59307">API</a> %>
-</div>
-
-<div style="background-color: #EFEFEF; width: 80%; margin: 0 auto; height: 200px; margin-top: 10px; border-radius: 10px;">
-  ここには表示している航空会社ごとの関連記事を表示する
-</div>
-
-<div style="background-color: #DADADA; width: 80%; margin: 0 auto; height: 500px; margin-top: 10px; border-radius: 10px;">
-  ここにレビューを表示
-  例)
-  <p>利用した空港情報:</p>
-  <p>利用した日時:</p>
-  <p>利用したクラス:</p>
-  <p>レビュー:</p>
-</div>
+<h1>Airlines List</h1>
+<% @airlines.each_with_index do |airline, i|  %>
+  <p><%= i+1 %>:<%= link_to airline.name, airline_path(airline.id) %></p>
+<% end %>
