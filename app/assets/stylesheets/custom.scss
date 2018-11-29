@@ -1,6 +1,4 @@
-body {
-  max-width: 1300px;
-}
+
 
 //*Select Form*//
 select {
@@ -24,11 +22,10 @@ select {
 .airline {
   display: table;
   width: 100%;
+  margin: 0 50px 0 50px;
 
   .airline-main-info {
-    width: 90%;
     padding-top: 10px;
-    margin: 0 auto;
 
     .airline-info1 {
       width: 30%;
@@ -44,9 +41,6 @@ select {
         font-weight: bold;
         padding-top: 20px;
         text-decoration: underline;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         .main-info {
           padding-top: 5px;

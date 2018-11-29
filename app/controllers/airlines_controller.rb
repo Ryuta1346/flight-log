@@ -44,6 +44,6 @@ class AirlinesController < ApplicationController
   private
 
     def airline_params
-      params.require(:airline).permit(:name, :headquarters, :base, :foundation, :main_line, :summary)
+      params.require(:airline).permit(:name, :region, :nationality, :headquarters, :base, :foundation, :main_line, :summary)
     end
 end
