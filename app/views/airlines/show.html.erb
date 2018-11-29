@@ -1,45 +1,54 @@
-<h2 style="text-align: center">航空会社名:<%= @airline.name %></h2>
-<div class="airline">
-  <div class="airline-main-info">
-    <div class="airline-info1">
-      <div class="airline-content">航空会社の設立年</div>
-      <div class="main-info"><%= @airline.foundation %></div>
-    </div>
-    <div class="airline-info1">
-      <div class="airline-content">航空会社の本社場所</div>
-      <div class="main-info"><%= @airline.headquarters %></div>
-    </div>
-    <div class="airline-info1">
-      <div class="airline-content">航空会社の拠点空港</div>
-      <div class="main-info"><%= @airline.base %></div>
-    </div>
-    <div class="airline-info1">
-      <div class="airline-content">航空会社のメイン路線</div>
-      <div class="main-info"><%= @airline.main_line %></div>
+<div class="container">
+  <h2 style="text-align: center">航空会社名:<%= @airline.name %></h2>
+  <div class="airline">
+    <div class="airline-main-info">
+      <div class="airline-info1">
+        <div class="airline-content">地域</div>
+        <div class="main-info"><%= @airline.region %></div>
+      </div>
+      <div class="airline-info1">
+        <div class="airline-content">航空会社の国籍地</div>
+        <div class="main-info"><%= @airline.nationality %></div>
+      </div>
+      <div class="airline-info1">
+        <div class="airline-content">航空会社の設立年</div>
+        <div class="main-info"><%= @airline.foundation %></div>
+      </div>
+      <div class="airline-info1">
+        <div class="airline-content">航空会社の本社場所</div>
+        <div class="main-info"><%= @airline.headquarters %></div>
+      </div>
+      <div class="airline-info1">
+        <div class="airline-content">航空会社の拠点空港</div>
+        <div class="main-info"><%= @airline.base %></div>
+      </div>
+      <div class="airline-info1">
+        <div class="airline-content">航空会社のメイン路線</div>
+        <div class="main-info"><%= @airline.main_line %></div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="airline-summary">
-  <div class="summary-title">航空会社の概要</div>
-  <div class="summary"><%= simple_format(@airline.summary) %></div>
-</div>
+  <div class="airline-summary">
+    <div class="summary-title">航空会社の概要</div>
+    <div class="summary"><%= simple_format(@airline.summary) %></div>
+  </div>
 
+  <div style="background-color: #CCCCCC; height: 200px; margin-top: 10px; border-radius: 10px;">
+    ここにはSkyscannerAPIを使って表示している航空会社を利用した航空券の価格情報などを表示
+    <%# <a href="http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=065311a18e596a9374f70b0c29b59307">API</a> %>
+  </div>
 
-<div style="background-color: #CCCCCC; height: 200px; margin-top: 10px; border-radius: 10px;">
-  ここにはSkyscannerAPIを使って表示している航空会社を利用した航空券の価格情報などを表示
-  <%# <a href="http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=065311a18e596a9374f70b0c29b59307">API</a> %>
-</div>
+  <div style="background-color: #EFEFEF; height: 200px; margin-top: 10px; border-radius: 10px;">
+    ここには表示している航空会社ごとの関連記事を表示する
+  </div>
 
-<div style="background-color: #EFEFEF; height: 200px; margin-top: 10px; border-radius: 10px;">
-  ここには表示している航空会社ごとの関連記事を表示する
-</div>
-
-<div style="background-color: #DADADA; height: 500px; margin-top: 10px; border-radius: 10px;">
-  ここにレビューを表示
-  例)
-  <p>利用した空港情報:</p>
-  <p>利用した日時:</p>
-  <p>利用したクラス:</p>
-  <p>レビュー:</p>
+  <div style="background-color: #DADADA; height: 500px; margin-top: 10px; border-radius: 10px;">
+    ここにレビューを表示
+    例)
+    <p>利用した空港情報:</p>
+    <p>利用した日時:</p>
+    <p>利用したクラス:</p>
+    <p>レビュー:</p>
+  </div>
 </div>

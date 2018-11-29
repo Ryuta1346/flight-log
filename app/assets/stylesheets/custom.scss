@@ -1,3 +1,7 @@
+body {
+  max-width: 1300px;
+}
+
 //*Select Form*//
 select {
   width: 60%;
@@ -6,25 +10,36 @@ select {
   background-color: #ffffff;
 }
 
+//body{
+//  background-image: image_url("plane1.jpg");
+//  background-size: cover;
+//  background-repeat: no-repeat;
+//}
+
 //*airline-data*//
 .container {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .airline {
+  display: table;
+  width: 100%;
+
   .airline-main-info {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding-top: 10px;
     margin: 0 auto;
+
     .airline-info1 {
-      width: 24%;
+      width: 30%;
       margin: 4px;
       text-align: center;
       float: left;
       border: 1px solid;
       border-radius: 10px;
       height: 100px;
-      box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.9);
+
       .airline-content {
         font-weight: bold;
         padding-top: 20px;
@@ -32,11 +47,11 @@ select {
         display: flex;
         justify-content: center;
         align-items: center;
-      }
 
-      .main-info {
-        padding-top: 5px;
-        font-size: 16px;
+        .main-info {
+          padding-top: 5px;
+          font-size: 16px;
+        }
       }
     }
   }
@@ -44,12 +59,13 @@ select {
 
 .airline-summary {
   width: 100%;
-  margin-top: 110px;
   padding-bottom: 10px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   background-color: #999999;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.8);
+
   .summary-title {
     text-align: center;
     font-weight: bold;
@@ -57,6 +73,7 @@ select {
     text-decoration: underline;
     font-size: 20px;
   }
+
   .summary {
     margin: 15px;
     text-align: left;
