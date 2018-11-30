@@ -1,4 +1,7 @@
 class AirlinesController < ApplicationController
+  require 'nokogiri'
+  require 'open-uri'
+
   def index
     @airlines = Airline.all
   end
@@ -20,6 +23,10 @@ class AirlinesController < ApplicationController
 
   def show
     @airline = Airline.find(params[:id])
+    doc      = Nokogiri::HTML(open('https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%88%AA%E7%A9%BA'))
+    main = doc.at_css('div.mw-parser-output/p')
+    @doc = main.text
+    @nodesets = doc.xpath('//h2')
   end
 
   def edit
