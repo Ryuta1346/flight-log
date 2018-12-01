@@ -3,8 +3,8 @@
   <div class="airline">
     <div class="airline-main-info">
       <div class="airline-info1">
-        <div class="airline-content">地域</div>
-        <div class="main-info"><%= @airline.region %></div>
+        <div class="airline-content">所属アライアンス</div>
+        <div class="main-info"><%= @airline.alliance %></div>
       </div>
       <div class="airline-info1">
         <div class="airline-content">航空会社の国籍地</div>
@@ -16,7 +16,7 @@
       </div>
       <div class="airline-info1">
         <div class="airline-content">航空会社の本社場所</div>
-        <div class="main-info"><%= @airline.headquarters %></div>
+        <div class="main-info"><%= @location %></div>
       </div>
       <div class="airline-info1">
         <div class="airline-content">航空会社の拠点空港</div>
@@ -32,7 +32,10 @@
 
 <div class="airline-summary">
   <div class="summary-title">航空会社の概要</div>
-  <div class="summary"><%= simple_format(@airline.summary) %><%= simple_format(@doc) %></div>
+  <div class="summary">
+    <%= simple_format(@airline.summary) %>
+    <%= simple_format(@doc) %>
+  </div>
 </div>
 
 <div style="background-color: #CCCCCC; height: 200px; margin-top: 10px; border-radius: 10px;">

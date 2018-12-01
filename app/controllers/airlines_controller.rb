@@ -22,11 +22,11 @@ class AirlinesController < ApplicationController
   end
 
   def show
-    @airline = Airline.find(params[:id])
-    doc      = Nokogiri::HTML(open('https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%88%AA%E7%A9%BA'))
-    main = doc.at_css('div.mw-parser-output/p')
-    @doc = main.text
-    @nodesets = doc.xpath('//h2')
+    @airline    = Airline.find(params[:id])
+    airline_url = URI.encode("#{@airline.name}")
+    doc         = Nokogiri::HTML(open("https://ja.wikipedia.org/wiki/#{airline_url}"))
+    main        = doc.xpath('//*[@id="mw-content-text"]/div/p')[0..3]
+    @doc        = main.inner_text.gsub(/\[\d]/, "")
   end
 
   def edit
@@ -51,6 +51,6 @@ class AirlinesController < ApplicationController
   private
 
     def airline_params
-      params.require(:airline).permit(:name, :region, :nationality, :headquarters, :base, :foundation, :main_line, :summary)
+      params.require(:airline).permit(:name, :region, :nationality, :headquarters, :base, :foundation, :main_line, :summary, :url, :alliance)
     end
 end
