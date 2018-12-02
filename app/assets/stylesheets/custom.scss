@@ -83,13 +83,13 @@ select {
  */
 
 .site-header {
-  background-color: rgba(0, 0, 0, .85);
+  background-color: #0080ff;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
 }
 
 .site-header a {
-  color: #999;
+  color: #F7F7F7;
   transition: ease-in-out color .15s;
 }
 
@@ -97,6 +97,15 @@ select {
   color: #fff;
   text-decoration: none;
 }
+
+/*footer*/
+footer{
+  background-color: #2E2F30;
+  color: #F7F7F7;
+  margin-top: 10px;
+  padding: 0 100px 0 100px;
+}
+
 
 /*
  * Extra utilities

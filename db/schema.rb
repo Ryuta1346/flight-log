@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_173629) do
+ActiveRecord::Schema.define(version: 2018_12_02_083436) do
 
   create_table "airlines", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_12_01_173629) do
     t.string "nationality"
     t.string "url"
     t.string "alliance"
+    t.string "flyer_program"
   end
 
 end

@@ -7,24 +7,24 @@
         <div class="main-info"><%= @airline.alliance %></div>
       </div>
       <div class="airline-info1">
-        <div class="airline-content">航空会社の国籍地</div>
-        <div class="main-info"><%= @airline.nationality %></div>
+        <div class="airline-content">マイレージサービス</div>
+        <div class="main-info"><%= @airline.flyer_program %></div>
       </div>
       <div class="airline-info1">
-        <div class="airline-content">航空会社の設立年</div>
-        <div class="main-info"><%= @airline.foundation %></div>
+        <div class="airline-content">設立年</div>
+        <div class="main-info"><%= @airline.foundation %>年</div>
       </div>
       <div class="airline-info1">
         <div class="airline-content">航空会社の本社場所</div>
-        <div class="main-info"><%= @location %></div>
+        <div class="main-info"><%= @airline.headquarters %></div>
       </div>
       <div class="airline-info1">
         <div class="airline-content">航空会社の拠点空港</div>
         <div class="main-info"><%= @airline.base %></div>
       </div>
       <div class="airline-info1">
-        <div class="airline-content">航空会社のメイン路線</div>
-        <div class="main-info"><%= @airline.main_line %></div>
+        <div class="airline-content"><%= @airline.name %>の航空券を探す</div>
+        <div class="main-info"><%= link_to "お得に航空券を探す", @airline.url %></div>
       </div>
     </div>
   </div>
@@ -34,7 +34,8 @@
   <div class="summary-title">航空会社の概要</div>
   <div class="summary">
     <%= simple_format(@airline.summary) %>
-    <%= simple_format(@doc) %>
+    <%#= simple_format(@doc) %>
+    <%= simple_format(@overview) %>
   </div>
 </div>
 
@@ -44,7 +45,12 @@
 </div>
 
 <div style="background-color: #EFEFEF; height: 200px; margin-top: 10px; border-radius: 10px;">
-  ここには表示している航空会社ごとの関連記事を表示する
+  <h4>【News】</h4>
+  <ul>
+    <% @articles.each do |article| %>
+      <li><%= link_to article.text, article[:href] %></li>
+    <% end %>
+  </ul>
 </div>
 
 <div style="background-color: #DADADA; height: 500px; margin-top: 10px; border-radius: 10px;">
