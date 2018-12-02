@@ -28,36 +28,38 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="airline-summary">
-  <div class="summary-title">航空会社の概要</div>
-  <div class="summary">
-    <%= simple_format(@airline.summary) %>
-    <%#= simple_format(@doc) %>
-    <%= simple_format(@overview) %>
+  <div class="airline-summary">
+    <div class="summary-title">航空会社の概要</div>
+    <div class="summary">
+      <%= simple_format(@airline.summary) %>
+      <%#= simple_format(@doc) %>
+      <%= simple_format(@overview) %>
+    </div>
   </div>
-</div>
 
-<div style="background-color: #CCCCCC; height: 200px; margin-top: 10px; border-radius: 10px;">
-  ここにはSkyscannerAPIを使って表示している航空会社を利用した航空券の価格情報などを表示
-  <%# <a href="http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=065311a18e596a9374f70b0c29b59307">API</a> %>
-</div>
+  <div style="background-color: #CCCCCC; height: 200px; margin-top: 10px; border-radius: 10px;">
+    ここにはSkyscannerAPIを使って表示している航空会社を利用した航空券の価格情報などを表示
+    <%# <a href="http://api.travelpayouts.com/v1/airline-directions?airline_code=SU&limit=10&token=065311a18e596a9374f70b0c29b59307">API</a> %>
+  </div>
 
-<div style="background-color: #EFEFEF; height: 200px; margin-top: 10px; border-radius: 10px;">
-  <h4>【News】</h4>
-  <ul>
-    <% @articles.each do |article| %>
-      <li><%= link_to article.text, article[:href] %></li>
-    <% end %>
-  </ul>
-</div>
+  <div class="airline-news">
+    <h2 class="news-title">【News】</h2>
+    <div class="news">
+      <ul>
+        <% @articles.each do |article| %>
+          <li><%= link_to article.text, article[:href] %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-<div style="background-color: #DADADA; height: 500px; margin-top: 10px; border-radius: 10px;">
-  ここにレビューを表示
-  例)
-  <p>利用した空港情報:</p>
-  <p>利用した日時:</p>
-  <p>利用したクラス:</p>
-  <p>レビュー:</p>
+  <div style="background-color: #DADADA; height: 500px; margin-top: 10px; border-radius: 10px;">
+    ここにレビューを表示
+    例)
+    <p>利用した空港情報:</p>
+    <p>利用した日時:</p>
+    <p>利用したクラス:</p>
+    <p>レビュー:</p>
+  </div>
 </div>
