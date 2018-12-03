@@ -1,6 +1,9 @@
 class AirlinesController < ApplicationController
   require 'nokogiri'
   require 'open-uri'
+  require 'unirest'
+  # require 'rapidapisdk'
+
 
   def index
     @airlines = Airline.all
@@ -45,6 +48,13 @@ class AirlinesController < ApplicationController
     end
     airline_news  = Nokogiri::HTML.parse(html, nil, charset)
     @articles       = airline_news.xpath('//*[@id="NSm"]/div/h2/a')[0..6]
+
+    # response = Unirest.get "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2019-01-01/2019-01-02",
+    #                        headers:{
+    #                            "X-RapidAPI-Key" => "ErletPPl6dmshTjhn4lydgzKIMb3p1v5WLzjsnIfGlRbArBVs5"
+    #                        }
+    #
+    # @response = response.body
   end
 
   def edit
