@@ -37,24 +37,17 @@ class AirlinesController < ApplicationController
     end
     doc1      = Nokogiri::HTML.parse(html, nil, charset)
     overview  = doc1.xpath('//*[@id="mw-content-text"]/div/p')[0..3]
-    @overview = overview.inner_text.gsub(/\[\d]/, "")
+    @overview = overview.inner_text.gsub(/\[\d+]/, "")
     #Wikipediaのスクレイピングここまで
 
-    news_url      = "https://news.yahoo.co.jp/search/;_ylt=A2RCAwoB5gNcdnsAZwiEmuZ7?p=#{airline_url}&vaop=a&to=0&st=n&c_n=dom&c_n=c_int&c_n=bus&c_n=c_sci&c_n=loc"
-    charset       = nil
-    html          = open(news_url) do |f|
+    news_url     = "https://news.yahoo.co.jp/search/;_ylt=A2RCAwoB5gNcdnsAZwiEmuZ7?p=#{airline_url}&vaop=a&to=0&st=n&c_n=dom&c_n=c_int&c_n=bus&c_n=c_sci&c_n=loc"
+    charset      = nil
+    html         = open(news_url) do |f|
       charset = f.charset # 文字種別を取得
       f.read # htmlを読み込んで変数htmlに渡す
     end
-    airline_news  = Nokogiri::HTML.parse(html, nil, charset)
-    @articles       = airline_news.xpath('//*[@id="NSm"]/div/h2/a')[0..6]
-
-    # response = Unirest.get "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2019-01-01/2019-01-02",
-    #                        headers:{
-    #                            "X-RapidAPI-Key" => "ErletPPl6dmshTjhn4lydgzKIMb3p1v5WLzjsnIfGlRbArBVs5"
-    #                        }
-    #
-    # @response = response.body
+    airline_news = Nokogiri::HTML.parse(html, nil, charset)
+    @articles    = airline_news.xpath('//*[@id="NSm"]/div/h2/a')[0..6]
   end
 
   def edit

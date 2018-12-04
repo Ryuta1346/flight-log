@@ -1,5 +1,3 @@
-
-
 //*Select Form*//
 select {
   width: 60%;
@@ -127,14 +125,20 @@ select {
   text-decoration: none;
 }
 
-/*footer*/
-footer{
-  background-color: #2E2F30;
-  color: #F7F7F7;
-  margin-top: 10px;
-  padding: 0 100px 0 100px;
+//*Quoated*//
+.quoted {
+  font-size: 12px;
+  text-align: right;
+  margin-right: 50px;
 }
 
+/*footer*/
+footer {
+  background-color: #2E2F30;
+  color: #F7F7F7;
+  margin-top: 50px;
+  padding: 0 100px 0 100px;
+}
 
 /*
  * Extra utilities
