@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_083436) do
+ActiveRecord::Schema.define(version: 2018_12_04_120458) do
 
   create_table "airlines", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(version: 2018_12_02_083436) do
     t.string "url"
     t.string "alliance"
     t.string "flyer_program"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "airline_id"
+    t.string "airport_from"
+    t.string "airport_to"
+    t.date "travel_date"
+    t.string "cabinclass"
+    t.text "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "star_full"
+    t.integer "star_seat"
+    t.integer "star_service"
+    t.index ["airline_id"], name: "index_posts_on_airline_id"
   end
 
 end

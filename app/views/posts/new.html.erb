@@ -1,0 +1,62 @@
+<div class="review">
+  <%= form_for(@post) do |f| %>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <%= f.label :Airline %><br />
+        <%= f.collection_select :airline_id, Airline.all, :id, :name, class: "date" %>
+      </div>
+
+      <div class="form-group col-md-5">
+        <%= f.label :Date %><br />
+        <%= f.date_select :travel_date, start_year: 2000, class: "date" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :airport_from %>
+        <%= f.text_field :airport_from, autofocus: true, autocomplete: "airport_from", placeholder: "Depature", class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-6">
+        <%= f.label :airport_to %>
+        <%= f.text_field :airport_to, autofocus: true, autocomplete: "airport_to", placeholder: "Arrived", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :cabinclass %>
+        <%= f.text_field :cabinclass, autofocus: true, autocomplete: "cabinclass", placeholder: "CabinClass", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <%= f.label :star_full %>
+        <%= f.select :star_full, [["★", "1"], ["★★", "2"],["★★★", "3"], ["★★★★", "4"]], class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-3">
+        <%= f.label :star_seat %>
+        <%= f.select :star_seat, [["★", "1"], ["★★", "2"],["★★★", "3"], ["★★★★", "4"]], class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-3">
+        <%= f.label :star_service %>
+        <%= f.select :star_service, [["★", "1"], ["★★", "2"],["★★★", "3"], ["★★★★", "4"]], class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <%= f.label :review %>
+        <%= f.text_area :review, autofocus: true, autocomplete: "review", placeholder: "Review", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Post", class: "btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
+</div>

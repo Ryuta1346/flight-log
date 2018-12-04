@@ -57,12 +57,13 @@
     </div>
   </div>
 
-  <div style="background-color: #DADADA; height: 500px; margin-top: 10px; border-radius: 10px;">
-    ここにレビューを表示
-    例)
-    <p>利用した空港情報:</p>
-    <p>利用した日時:</p>
-    <p>利用したクラス:</p>
-    <p>レビュー:</p>
-  </div>
+  <!--  <div style="background-color: #DADADA; height: 500px; margin-top: 10px; border-radius: 10px;">-->
+  <%= link_to "Post Review", new_post_path %>
+  <%= render 'shared/review_form' %>
+  ここにレビューを表示
+  例)
+  <p>利用した空港情報:</p>
+  <p>利用した日時:</p>
+  <p>利用したクラス:</p>
+  <p>レビュー:</p>
 </div>

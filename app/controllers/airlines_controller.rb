@@ -25,7 +25,8 @@ class AirlinesController < ApplicationController
   end
 
   def show
-    @airline    = Airline.find(params[:id])
+    @airline = Airline.find(params[:id])
+    # @reviews    = Post.find_by(airline_id: params[:airline_id])
     airline_url = URI.encode("#{@airline.name}")
 
     #Wikipediaのスクレイピングここから
@@ -84,4 +85,17 @@ class AirlinesController < ApplicationController
                                       :alliance,
                                       :flyer_program)
     end
+
+    # def post_params
+    #   params.require(:post).permit(
+    #       :airline_id,
+    #       :airport_from,
+    #       :airport_to,
+    #       :date,
+    #       :cabinclass,
+    #       :review,
+    #       :star_full,
+    #       :star_seat,
+    #       :star_service)
+    # end
 end

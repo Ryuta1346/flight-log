@@ -1,0 +1,57 @@
+<div class="review">
+  <%= form_for(@airline.posts.build) do |f| %>
+    <%= hidden_field_tag :airline_id, @airline.id %>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <%= f.label :Date %>
+        <%= f.date_select :date %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :airport_from %>
+        <%= f.text_field :airport_from, autofocus: true, autocomplete: "airport_from", placeholder: "Depature", class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-6">
+        <%= f.label :airport_to %>
+        <%= f.text_field :airport_to, autofocus: true, autocomplete: "airport_to", placeholder: "Arrived", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :cabinclass %>
+        <%= f.text_field :cabinclass, autofocus: true, autocomplete: "cabinclass", placeholder: "CabinClass", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <%= f.label :star_full %>
+        <%= f.text_field :star_full, autofocus: true, autocomplete: "airport_to", placeholder: "Arrived", class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-3">
+        <%= f.label :star_seat %>
+        <%= f.text_field :star_seat, autofocus: true, autocomplete: "airport_from", placeholder: "Depature", class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-3">
+        <%= f.label :star_service %>
+        <%= f.text_field :star_service, autofocus: true, autocomplete: "airport_to", placeholder: "Arrived", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <%= f.label :review %>
+        <%= f.text_area :review, autofocus: true, autocomplete: "review", placeholder: "Review", class: "form-control" %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Post", class: "btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
+</div>

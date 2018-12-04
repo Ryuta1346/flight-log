@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
 
 Airline.create!(name: "日本航空", nationality: "日本", foundation: 1953, headquarters: "東京都",
                 base: "成田国際空港/東京国際空港", alliance: "One World", flyer_program: "JALマイレージバンク",

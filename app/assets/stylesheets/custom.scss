@@ -1,10 +1,8 @@
 //*Select Form*//
-select {
-  width: 60%;
-  margin: 0 auto;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-}
+//select {
+//  width: 1px;
+//  height: 50px;
+//}
 
 //body{
 //  background-image: image_url("plane1.jpg");
@@ -130,6 +128,20 @@ select {
   font-size: 12px;
   text-align: right;
   margin-right: 50px;
+}
+
+//*Review*//
+.review {
+  background-color: #DADADA;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  .date {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    //padding: 0 100px 0 100px;
+  }
 }
 
 /*footer*/
