@@ -1,0 +1,32 @@
+<h2><%= @airline.name %></h2>
+<div class="review_all">
+  <div class="review_one">
+    <%= @post.created_at.strftime('%Y年%m月%d日') %> 出発地:<%= @post.airport_from %> |
+    到着地:<%= @post.airport_to %><br/>
+    <div class="row" style="width: 100%; text-align: center; margin-top: 10px;">
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <span style="text-align: center; font-size: 14px">総合評価:</span>
+        <span style="text-align: center;"><%= to_star(@post.star_full) %></span>
+      </div>
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <span style="text-align: center; font-size: 14px">搭乗まで:</span>
+        <span style="text-align: center;"><%= to_star(@post.star_full) %></span>
+      </div>
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <span style="text-align: center; font-size: 14px">CA対応:</span>
+        <span style="text-align: center;"><%= to_star(@post.star_full) %></span>
+      </div>
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <span style="text-align: center; font-size: 14px">座席評価:</span>
+        <span style="text-align: center;"><%= to_star(@post.star_full) %></span>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <h2 style="font-size: 16px;">【レビュー】</h2>
+      <%= @post.review %>
+    </div>
+  </div>
+  <div class="return">
+    <%= link_to "Back", @airline %>
+  </div>
+</div>

@@ -26,6 +26,7 @@ class AirlinesController < ApplicationController
 
   def show
     @airline = Airline.find(params[:id])
+    @posts = @airline.posts
     # @reviews    = Post.find_by(airline_id: params[:airline_id])
     airline_url = URI.encode("#{@airline.name}")
 

@@ -2,6 +2,11 @@ class PostsController < ApplicationController
   def index
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @airline = @post.airline
+  end
+
   def new
     @post = Post.new
   end

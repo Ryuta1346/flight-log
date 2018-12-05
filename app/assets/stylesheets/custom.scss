@@ -31,7 +31,7 @@
       border: 1px solid;
       border-radius: 10px;
       height: 100px;
-      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.9);
+      box-shadow: 1px 1px 1px 1px #2E2F30;
 
       .airline-content {
         font-weight: bold;
@@ -54,7 +54,7 @@
   margin-bottom: 30px;
   background-color: #999999;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 1px 1px #2E2F30;
 
   .summary-title {
     text-align: center;
@@ -70,7 +70,7 @@
     background-color: #F7F7F7;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 1px 1px #2E2F30;
   }
 }
 
@@ -82,7 +82,7 @@
   margin-bottom: 30px;
   background-color: #2E2F30;
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 1px 1px #2E2F30;
 
   .news-title {
     text-align: left;
@@ -99,7 +99,7 @@
     background-color: #F7F7F7;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 1px 1px #2E2F30;
   }
 }
 
@@ -131,6 +131,21 @@
 }
 
 //*Review*//
+.review_all {
+  background-color: #F7F7F7;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #2E2F30;
+  .review_one {
+    border-bottom: 1px solid #2E2F30;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+  }
+}
+
+//*Review_form*//
 .review {
   background-color: #DADADA;
   width: 100%;

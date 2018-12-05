@@ -9,83 +9,83 @@
 
 Airline.create!(name: "日本航空", nationality: "日本", foundation: 1953, headquarters: "東京都",
                 base: "成田国際空港/東京国際空港", alliance: "One World", flyer_program: "JALマイレージバンク",
-                url: "https://www.sorahapi.jp/airline/JAL/")
+                url:  "https://www.sorahapi.jp/airline/JAL/")
 
 Airline.create!(name: "ジェイエア", nationality: "日本", foundation: 1996, headquarters: "大阪府池田市",
                 base: "大阪国際空港(伊丹空港)", alliance: "One World", flyer_program: "JALマイレージバンク",
-                url: "https://www.sorahapi.jp/airline/JAL/")
+                url:  "https://www.sorahapi.jp/airline/JAL/")
 
 Airline.create!(name: "北海道エアシステム", nationality: "日本", foundation: 1997, headquarters: "北海道札幌市",
                 base: "丘珠空港", alliance: " - ", flyer_program: "JALマイレージバンク",
-                url: "https://www.sorahapi.jp/airline/JAL/")
+                url:  "https://www.sorahapi.jp/airline/JAL/")
 
 Airline.create!(name: "日本エアコミューター", nationality: "日本", foundation: 1983, headquarters: "鹿児島県霧島市",
                 base: "鹿児島空港", alliance: " - ", flyer_program: "JALマイレージバンク",
-                url: "https://www.sorahapi.jp/airline/JAL/")
+                url:  "https://www.sorahapi.jp/airline/JAL/")
 
 Airline.create!(name: "日本トランスオーシャン航空", nationality: "日本", foundation: 1993, headquarters: "沖縄県那覇市",
                 base: "那覇空港", alliance: "One World", flyer_program: "JALマイレージバンク",
-                url: "https://www.sorahapi.jp/airline/JAL/")
+                url:  "https://www.sorahapi.jp/airline/JAL/")
 
 Airline.create!(name: "ジェットスター・ジャパン", nationality: "日本", foundation: 2011, headquarters: "千葉県成田市",
                 base: "成田国際空港/関西国際空港/中部国際空港", alliance: " - ", flyer_program: "JALマイレージバンク",
-                url: "https://www.sorahapi.jp/airline/Jetstar/")
+                url:  "https://www.sorahapi.jp/airline/Jetstar/")
 
 Airline.create!(name: "全日本空輸", nationality: "日本", foundation: 1952, headquarters: "東京都港区",
                 base: "成田国際空港/東京国際空港/関西国際空港/大阪国際空港", alliance: "Star Alliance", flyer_program: "ANAマイレージクラブ",
-                url: "https://www.sorahapi.jp/airline/ANA/")
+                url:  "https://www.sorahapi.jp/airline/ANA/")
 
 Airline.create!(name: "エアージャパン", nationality: "日本", foundation: 1990, headquarters: "東京都大田区",
                 base: "成田国際空港", alliance: "Star Alliance", flyer_program: "ANAマイレージクラブ",
-                url: "https://www.sorahapi.jp/airline/ANA/")
+                url:  "https://www.sorahapi.jp/airline/ANA/")
 
 Airline.create!(name: "バニラ・エア", nationality: "日本", foundation: 2013, headquarters: "東京都",
                 base: "成田国際空港", alliance: "Value Alliance", flyer_program: " - ",
-                url: "https://www.sorahapi.jp/airline/VanillaAir/")
+                url:  "https://www.sorahapi.jp/airline/VanillaAir/")
 
 Airline.create!(name: "Peach Aviation", nationality: "日本", foundation: 2012, headquarters: "大阪府泉南郡",
                 base: "関西国際空港/那覇空港/仙台空港/新千歳空港", alliance: " - ", flyer_program: " - ",
-                url: "https://www.sorahapi.jp/airline/Peach/")
+                url:  "https://www.sorahapi.jp/airline/Peach/")
 
 Airline.create!(name: "スカイマーク", nationality: "日本", foundation: 1998, headquarters: "東京都大田区",
                 base: "神戸空港/東京国際空港", alliance: " - ", flyer_program: " - ",
-                url: "https://www.sorahapi.jp/airline/SKYMARK/")
+                url:  "https://www.sorahapi.jp/airline/SKYMARK/")
 
 Airline.create!(name: "AIRDO", nationality: "日本", foundation: 1998, headquarters: "北海道札幌市",
                 base: "新千歳空港/東京国際空港", alliance: " - ", flyer_program: "DOマイル",
-                url: "https://www.sorahapi.jp/airline/AirDo/")
+                url:  "https://www.sorahapi.jp/airline/AirDo/")
 
 Airline.create!(name: "ソラシドエア", nationality: "日本", foundation: 2011, headquarters: "宮崎県宮崎市",
                 base: "東京国際空港", alliance: " - ", flyer_program: "ソラシドスマイルクラブ",
-                url: "https://www.sorahapi.jp/airline/SolaseedAir/")
+                url:  "https://www.sorahapi.jp/airline/SolaseedAir/")
 
 Airline.create!(name: "スターフライヤー", nationality: "日本", foundation: 2006, headquarters: "福岡県北九州市",
                 base: "北九州空港", alliance: " - ", flyer_program: "STAR LINK",
-                url: "https://www.sorahapi.jp/airline/StarFlyer/")
+                url:  "https://www.sorahapi.jp/airline/StarFlyer/")
 
 Airline.create!(name: "アイベックスエアラインズ", nationality: "日本", foundation: 1999, headquarters: "東京都江東区",
                 base: "仙台空港/大阪国際空港", alliance: " - ", flyer_program: " - ",
-                url: "https://airticket-mall.com/ibx")
+                url:  "https://airticket-mall.com/ibx")
 
 Airline.create!(name: "フジドリームエアラインズ", nationality: "日本", foundation: 2008, headquarters: "静岡県静岡市",
                 base: "静岡空港", alliance: " - ", flyer_program: " - ",
-                url: "https://www.sorahapi.jp/airline/FDA/")
+                url:  "https://www.sorahapi.jp/airline/FDA/")
 
 Airline.create!(name: "オリエンタルエアブリッジ", nationality: "日本", foundation: 2001, headquarters: "長崎県大村市",
                 base: "長崎空港", alliance: " - ", flyer_program: " - ",
-                url: "https://airticket-mall.com/orc")
+                url:  "https://airticket-mall.com/orc")
 
 Airline.create!(name: "天草エアライン", nationality: "日本", foundation: 2000, headquarters: "熊本県天草市",
                 base: "天草飛行場", alliance: " - ", flyer_program: "みぞかポイント",
-                url: "https://airticket-mall.com/amx")
+                url:  "https://airticket-mall.com/amx")
 
 Airline.create!(name: "春秋航空日本", nationality: "日本", foundation: 2014, headquarters: "東京都",
                 base: "成田国際空港", alliance: " - ", flyer_program: " - ",
-                url: "https://airticket-mall.com/springjp")
+                url:  "https://airticket-mall.com/springjp")
 
 Airline.create!(name: "エアアジア・ジャパン", nationality: "日本", foundation: 2017, headquarters: "東京都",
                 base: "中部国際空港", alliance: " - ", flyer_program: "BIG",
-                url: "https://www.sorahapi.jp/airline/")
+                url:  "https://www.sorahapi.jp/airline/")
 Airline.create!(name: "中国国際航空")
 Airline.create!(name: "中国東方航空")
 Airline.create!(name: "中国南方航空")
@@ -285,3 +285,39 @@ Airline.create!(name: "ケニア航空")
 Airline.create!(name: "南アフリカ航空")
 Airline.create!(name: "モーリシャス航空")
 Airline.create!(name: "TAAGアンゴラ航空")
+
+
+#Review
+airline1 = Airline.find(1)
+airline2 = Airline.find(7)
+10.times do |n|
+  airport1     = ["成田国際空港", "東京国際空港", "中部国際空港セントレア", "新千歳空港", "福岡空港", "関西国際空港"]
+  seat         = ["Economy", "Business"].shuffle.first
+  text         = Faker::Lorem.sentence(50)
+  star_before  = [1, 2, 3, 4, 5].shuffle.first
+  star_seat    = [1, 2, 3, 4, 5].shuffle.first
+  star_ca      = [1, 2, 3, 4, 5].shuffle.first
+  # star_full    = (star_before + star_seat + star_ca) / 3
+  #
+  airline1.posts.create!(
+      airport_from: airport1.shuffle.first,
+      airport_to:   airport1.shuffle.second,
+      cabinclass:   seat,
+      review:       text,
+      star_before:  star_before,
+      star_seat:    star_seat,
+      star_ca:      star_ca,
+      star_full:    (star_before + star_seat + star_ca) / 3
+  )
+
+  airline2.posts.create!(
+      airport_from: airport1.shuffle.first,
+      airport_to:   airport1.shuffle.second,
+      cabinclass:   seat,
+      review:       text,
+      star_before:  star_before,
+      star_seat:    star_seat,
+      star_ca:      star_ca,
+      star_full:    (star_before + star_seat + star_ca) / 3
+  )
+end

@@ -39,7 +39,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_120458) do
     t.datetime "updated_at", null: false
     t.integer "star_full"
     t.integer "star_seat"
-    t.integer "star_service"
+    t.integer "star_ca"
+    t.integer "star_before"
     t.index ["airline_id"], name: "index_posts_on_airline_id"
   end
 

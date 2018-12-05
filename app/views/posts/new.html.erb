@@ -1,13 +1,13 @@
-<div class="review">
+<div class="review" style="padding: 20px;">
   <%= form_for(@post) do |f| %>
     <div class="form-row">
       <div class="form-group col-md-5">
-        <%= f.label :Airline %><br />
+        <%= f.label :Airline %><br/>
         <%= f.collection_select :airline_id, Airline.all, :id, :name, class: "date" %>
       </div>
 
       <div class="form-group col-md-5">
-        <%= f.label :Date %><br />
+        <%= f.label :Date %><br/>
         <%= f.date_select :travel_date, start_year: 2000, class: "date" %>
       </div>
     </div>
@@ -34,17 +34,21 @@
     <div class="form-row">
       <div class="form-group col-md-3">
         <%= f.label :star_full %>
-        <%= f.select :star_full, [["★", "1"], ["★★", "2"],["★★★", "3"], ["★★★★", "4"]], class: "form-control" %>
+        <%= f.select :star_full, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
       </div>
 
+      <div class="form-group col-md-3">
+        <%= f.label :star_before %>
+        <%= f.select :star_before, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
+      </div>
+
+      <div class="form-group col-md-3">
+        <%= f.label :star_ca %>
+        <%= f.select :star_ca, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
+      </div>
       <div class="form-group col-md-3">
         <%= f.label :star_seat %>
-        <%= f.select :star_seat, [["★", "1"], ["★★", "2"],["★★★", "3"], ["★★★★", "4"]], class: "form-control" %>
-      </div>
-
-      <div class="form-group col-md-3">
-        <%= f.label :star_service %>
-        <%= f.select :star_service, [["★", "1"], ["★★", "2"],["★★★", "3"], ["★★★★", "4"]], class: "form-control" %>
+        <%= f.select :star_seat, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
       </div>
     </div>
 
@@ -55,7 +59,7 @@
       </div>
     </div>
 
-    <div class="actions">
+    <div class="actions" style="text-align: center">
       <%= f.submit "Post", class: "btn btn-lg btn-primary" %>
     </div>
   <% end %>
