@@ -1,6 +1,6 @@
 <h2 style="text-align: center"><%= @airline.name %></h2>
 <div class="container">
-  <h3 style="text-align: center">平均総合評価:<%= to_all(@posts) if @posts.any? %></h3>
+  <h3 style="text-align: center">平均総合評価:<%= to_all(@airline.posts, :star_full) if @posts.any? %></h3>
   <div class="airline">
     <div class="airline-main-info">
       <div class="airline-info1">
