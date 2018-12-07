@@ -2,59 +2,61 @@
   <%= form_for(@post) do |f| %>
     <div class="form-row">
       <div class="form-group col-md-5">
-        <%= f.label :Airline %><br/>
+        <%= f.label :航空会社 %><br/>
         <%= f.collection_select :airline_id, Airline.all, :id, :name, class: "date" %>
       </div>
 
       <div class="form-group col-md-5">
-        <%= f.label :Date %><br/>
-        <%= f.date_select :travel_date, start_year: 2000, class: "date" %>
+        <%= f.label :利用日時 %><br/>
+        <%= f.date_select :travel_date, start_year: 2000, class: "date" %><br />
+        <%= f.check_box :no_expiration %>
+        <%= f.label :no_expiration %>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
-        <%= f.label :airport_from %>
+        <%= f.label :出発地 %>
         <%= f.text_field :airport_from, autofocus: true, autocomplete: "airport_from", placeholder: "Depature", class: "form-control" %>
       </div>
 
       <div class="form-group col-md-6">
-        <%= f.label :airport_to %>
+        <%= f.label :到着地 %>
         <%= f.text_field :airport_to, autofocus: true, autocomplete: "airport_to", placeholder: "Arrived", class: "form-control" %>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
-        <%= f.label :cabinclass %>
+        <%= f.label :クラス %>
         <%= f.text_field :cabinclass, autofocus: true, autocomplete: "cabinclass", placeholder: "CabinClass", class: "form-control" %>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-3">
-        <%= f.label :star_full %>
+        <%= f.label :総合評価 %><br />
         <%= f.select :star_full, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
       </div>
 
       <div class="form-group col-md-3">
-        <%= f.label :star_before %>
+        <%= f.label :搭乗まで %><br />
         <%= f.select :star_before, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
       </div>
 
       <div class="form-group col-md-3">
-        <%= f.label :star_ca %>
+        <%= f.label :CA対応 %><br />
         <%= f.select :star_ca, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
       </div>
       <div class="form-group col-md-3">
-        <%= f.label :star_seat %>
+        <%= f.label :座席・アメニティ評価 %><br />
         <%= f.select :star_seat, [["★", "1"], ["★★", "2"], ["★★★", "3"], ["★★★★", "4"], ["★★★★★", "5"]], class: "form-control" %>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-12">
-        <%= f.label :review %>
+        <%= f.label :レビュー %><br />
         <%= f.text_area :review, autofocus: true, autocomplete: "review", placeholder: "Review", class: "form-control" %>
       </div>
     </div>

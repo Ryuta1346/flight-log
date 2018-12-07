@@ -1,6 +1,6 @@
 <h2 style="text-align: center"><%= @airline.name %></h2>
 <div class="container">
-  <h3 style="text-align: center">平均総合評価:<%= to_all(@airline.posts, :star_full) if @posts.any? %></h3>
+  <h3 style="text-align: center">平均総合評価:<%= to_all(@airline.posts, :star_full) %></h3>
   <div class="airline">
     <div class="airline-main-info">
       <div class="airline-info1">
@@ -60,20 +60,20 @@
         到着地:<%= post.airport_to %><br/>
         <div class="row" style="width: 100%; text-align: center; margin-top: 10px;">
           <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <span style="text-align: center; font-size: 14px">総合評価:</span>
-            <span style="text-align: center;"><%= to_star(post.star_full) %></span>
+            <div style="text-align: center; font-size: 14px">総合評価:</div>
+            <div style="text-align: center;"><%= to_star(post.star_full) %></div>
           </div>
           <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <span style="text-align: center; font-size: 14px">搭乗まで:</span>
-            <span style="text-align: center;"><%= to_star(post.star_full) %></span>
+            <div style="text-align: center; font-size: 14px">搭乗まで:</div>
+            <div style="text-align: center;"><%= to_star(post.star_before) %></div>
           </div>
           <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <span style="text-align: center; font-size: 14px">CA対応:</span>
-            <span style="text-align: center;"><%= to_star(post.star_full) %></span>
+            <div style="text-align: center; font-size: 14px">CA対応:</div>
+            <div style="text-align: center;"><%= to_star(post.star_ca) %></div>
           </div>
           <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <span style="text-align: center; font-size: 14px">座席評価:</span>
-            <span style="text-align: center;"><%= to_star(post.star_full) %></span>
+            <div style="text-align: center; font-size: 14px">座席評価:</div>
+            <div style="text-align: center;"><%= to_star(post.star_seat) %></div>
           </div>
         </div>
         <div style="margin-top: 20px">

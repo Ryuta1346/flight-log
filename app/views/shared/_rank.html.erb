@@ -1,6 +1,10 @@
 <div>
   <h3>総合評価ランキング</h3>
-  <p>ascascascas</p>
+  <p>
+    <% @ranks.each_with_index do |rank, i| %>
+      <%= i %>位:<%= rank.name %>
+    <% end %>
+  </p>
 </div>
 
 <div>
