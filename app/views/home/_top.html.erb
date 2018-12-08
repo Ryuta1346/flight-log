@@ -1,5 +1,20 @@
 <h1>Airlines List</h1>
 <% @airlines.each_with_index do |airline, i| %>
-  <p><%= i + 1 %>:<%= link_to airline.name, airline_path(airline.id) %></p>
-  <p><%= to_all(airline.posts, :star_full) %></p>
+  <div style="border: 1px solid #730E15; margin-bottom: 20px; padding: 10px; border-radius: 10px;">
+    <p><%= i + 1 %>:<%= link_to airline.name, airline_path(airline.id) %></p>
+    <p>総合評価:<%= to_all(airline.posts, :star_full) %></p>
+    <p>口コミ数:<%= airline.posts.count %></p>
+    <div style="border-bottom: 1px solid #DADADA; margin-bottom: 10px;">
+      <p>高評価:<%= to_star(airline.posts.order_star_full1.star_full) %><br/>
+        <%= truncate(airline.posts.order_star_full1.review, length: 100) %>
+        <%= link_to "詳細をみる", airline.posts.order_star_full1 %>
+      </p>
+    </div>
+    <div style="border-bottom: 1px solid #DADADA; margin-bottom: 10px;">
+      <p>低評価:<%= to_star(airline.posts.order_star_full2.star_full) %><br/>
+        <%= truncate(airline.posts.order_star_full2.review, length: 100) %>
+        <%= link_to "詳細をみる", airline.posts.order_star_full2 %>
+      </p>
+    </div>
+  </div>
 <% end %>

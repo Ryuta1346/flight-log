@@ -78,7 +78,14 @@
         </div>
         <div style="margin-top: 20px">
           <h2 style="font-size: 16px;">【レビュー】</h2>
-          <%= truncate(post.review, length: 100) %><%= link_to "詳細を見る", post %>
+          <% if post.review.size > 100 %>
+            <%= truncate(post.review, length: 100) %>
+            <%= link_to "詳細を見る", post %>
+          <% elsif post.review.size == 0 %>
+            レビューはありません。
+          <% else %>
+            <%= post.review %>
+          <% end %>
         </div>
       </div>
     <% end %>
