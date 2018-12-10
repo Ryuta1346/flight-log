@@ -18,6 +18,22 @@ module ApplicationHelper
     end
   end
 
+  def to_rank(airline)
+    aaa                    = {}
+    aaa["#{airline.name}"] = (airline.posts.map(&:star_full).sum / airline.posts.map(&:id).count)
+    if aaa["#{airline.name}"] <= 1.6
+      p "★"
+    elsif aaa["#{airline.name}"] <= 2.4
+      p "★★"
+    elsif aaa["#{airline.name}"] <= 3.4
+      p "★★★"
+    elsif aaa["#{airline.name}"] <= 4.4
+      p "★★★★"
+    else
+      p "★★★★★"
+    end
+  end
+
   def to_star(star)
     if star == 1
       p "★"
@@ -36,4 +52,5 @@ module ApplicationHelper
     # rank = posts.map(&:"#{evaluation}").sort.reverse[0..4]
     rank = posts.order(star_full: :desc)[0..4]
   end
+
 end

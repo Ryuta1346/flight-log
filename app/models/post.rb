@@ -16,6 +16,16 @@ class Post < ApplicationRecord
   # scope :rank_serve -> CA対応ランキング
   # scope :rank_seat -> 座席評価ランキング
   #
+
+  # def aaa
+  #   airlines = Airline.all
+  #   airlines.each do |airline|
+  #     airline_star = airline.posts.map(&:star_full)
+  #     average = airline_star.sum/airline_star.count
+  #     average[0..4]
+  #   end
+  # end
+
   def no_expiration
     travel_date.nil?
   end
