@@ -4,7 +4,7 @@ module ApplicationHelper
       post = "まだ未評価です"
     else
       post = posts.map(&:"#{evaluation}").sum / posts.count
-      if post <= 1.6
+      if post <= 1.4
         p "★"
       elsif post <= 2.4
         p "★★"
@@ -19,15 +19,15 @@ module ApplicationHelper
   end
 
   def to_rank(airline)
-    aaa                    = {}
-    aaa["#{airline.name}"] = (airline.posts.map(&:star_full).sum / airline.posts.map(&:id).count)
-    if aaa["#{airline.name}"] <= 1.6
+    rank                    = {}
+    rank["#{airline.name}"] = (airline.posts.map(&:star_full).sum / airline.posts.count)
+    if rank["#{airline.name}"] <= 1.6
       p "★"
-    elsif aaa["#{airline.name}"] <= 2.4
+    elsif rank["#{airline.name}"] <= 2.9
       p "★★"
-    elsif aaa["#{airline.name}"] <= 3.4
+    elsif rank["#{airline.name}"] <= 3.4
       p "★★★"
-    elsif aaa["#{airline.name}"] <= 4.4
+    elsif rank["#{airline.name}"] <= 4.4
       p "★★★★"
     else
       p "★★★★★"
@@ -35,22 +35,16 @@ module ApplicationHelper
   end
 
   def to_star(star)
-    if star == 1
+    if star <= 1.5
       p "★"
-    elsif star == 2
+    elsif star <= 2.5
       p "★★"
-    elsif star == 3
+    elsif star <= 3.5
       p "★★★"
-    elsif star == 4
+    elsif star <= 4.4
       p "★★★★"
     else
       p "★★★★★"
     end
   end
-
-  def rank(posts)
-    # rank = posts.map(&:"#{evaluation}").sort.reverse[0..4]
-    rank = posts.order(star_full: :desc)[0..4]
-  end
-
 end

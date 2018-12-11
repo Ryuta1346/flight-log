@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2018_12_04_120458) do
     t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "star_full"
-    t.integer "star_seat"
-    t.integer "star_ca"
-    t.integer "star_before"
+    t.float "star_full"
+    t.float "star_seat"
+    t.float "star_ca"
+    t.float "star_before"
     t.index ["airline_id"], name: "index_posts_on_airline_id"
   end
 

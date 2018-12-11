@@ -86,17 +86,4 @@ class AirlinesController < ApplicationController
                                       :alliance,
                                       :flyer_program)
     end
-
-  # def post_params
-  #   params.require(:post).permit(
-  #       :airline_id,
-  #       :airport_from,
-  #       :airport_to,
-  #       :date,
-  #       :cabinclass,
-  #       :review,
-  #       :star_full,
-  #       :star_seat,
-  #       :star_service)
-  # end
 end

@@ -6,8 +6,8 @@ class Post < ApplicationRecord
     self.travel_date = nil if @no_expiration
   end
 
-  scope :order_star_full1, -> { order(star_full: :desc).first }
-  scope :order_star_full2, -> { order(star_full: :desc).last }
+  scope :order_star1, -> { order(star_full: :desc).first }
+  scope :order_star2, -> { order(star_full: :desc).last }
 
   # scope :rank_review, -> (post){ post.order(star_full: :desc)}
 

@@ -5,15 +5,15 @@
     <p>総合評価:<%= to_all(airline.posts, :star_full) %></p>
     <p>口コミ数:<%= airline.posts.count %></p>
     <div style="border-bottom: 1px solid #DADADA; margin-bottom: 10px;">
-      <p>高評価:<%= to_star(airline.posts.order_star_full1.star_full) %><br/>
-        <%= truncate(airline.posts.order_star_full1.review, length: 100) %>
-        <%= link_to "詳細をみる", airline.posts.order_star_full1 %>
+      <p>高評価:<%= to_star(airline.posts.order_star1.star_full) %><br/>
+        <%= truncate(airline.posts.order_star1.review, length: 100) %>
+        <%= link_to "詳細をみる", airline.posts.order_star1 %>
       </p>
     </div>
     <div style="border-bottom: 1px solid #DADADA; margin-bottom: 10px;">
-      <p>低評価:<%= to_star(airline.posts.order_star_full2.star_full) %><br/>
-        <%= truncate(airline.posts.order_star_full2.review, length: 100) %>
-        <%= link_to "詳細をみる", airline.posts.order_star_full2 %>
+      <p>低評価:<%= to_star(airline.posts.order_star2.star_full) %><br/>
+        <%= truncate(airline.posts.order_star2.review, length: 100) %>
+        <%= link_to "詳細をみる", airline.posts.order_star2 %>
       </p>
     </div>
   </div>
