@@ -288,24 +288,24 @@ Airline.create!(name: "エアアジア・ジャパン", nationality: "日本", f
 
 
 #Review
-20.times do |n|
-  airline     = Airline.find(n + 1)
-  20.times do |m|
-    airport1    = ["成田国際空港", "東京国際空港", "中部国際空港セントレア", "新千歳空港", "福岡空港", "関西国際空港"]
-    seat        = ["Economy", "Business"].shuffle.first
-    text        = Faker::Lorem.sentence(50)
-    star_before = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
-    star_seat   = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
-    star_ca     = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
-    airline.posts.create!(
-        airport_from: airport1.shuffle.first,
-        airport_to:   airport1.shuffle.second,
-        cabinclass:   seat,
-        review:       text,
-        star_before:  star_before,
-        star_seat:    star_seat,
-        star_ca:      star_ca,
-        star_full:    (star_before + star_seat + star_ca) / 3
-    )
-  end
-end
+# 20.times do |n|
+#   airline     = Airline.find(n + 1)
+#   20.times do |m|
+#     airport1    = ["成田国際空港", "東京国際空港", "中部国際空港セントレア", "新千歳空港", "福岡空港", "関西国際空港"]
+#     seat        = ["Economy", "Business"].shuffle.first
+#     text        = Faker::Lorem.sentence(50)
+#     star_before = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
+#     star_seat   = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
+#     star_ca     = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
+#     airline.posts.create!(
+#         airport_from: airport1.shuffle.first,
+#         airport_to:   airport1.shuffle.second,
+#         cabinclass:   seat,
+#         review:       text,
+#         star_before:  star_before,
+#         star_seat:    star_seat,
+#         star_ca:      star_ca,
+#         star_full:    (star_before + star_seat + star_ca) / 3
+#     )
+#   end
+# end
