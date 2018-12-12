@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_120458) do
     t.string "name"
     t.string "headquarters"
     t.string "base"
-    t.integer "foundation"
+    t.date "foundation"
     t.string "main_line"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
