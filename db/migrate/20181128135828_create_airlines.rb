@@ -4,7 +4,7 @@ class CreateAirlines < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :headquarters
       t.string :base
-      t.date :foundation
+      t.integer :foundation
       t.string :main_line
 
       t.timestamps
