@@ -288,12 +288,8 @@ Airline.create!(name: "エアアジア・ジャパン", nationality: "日本", f
 
 
 #Review
-# airline1 = Airline.find(1)
-# airline2 = Airline.find(7)
 20.times do |n|
   airline     = Airline.find(n + 1)
-  # star_full    = (star_before + star_seat + star_ca) / 3
-  #
   20.times do |m|
     airport1    = ["成田国際空港", "東京国際空港", "中部国際空港セントレア", "新千歳空港", "福岡空港", "関西国際空港"]
     seat        = ["Economy", "Business"].shuffle.first
@@ -312,15 +308,4 @@ Airline.create!(name: "エアアジア・ジャパン", nationality: "日本", f
         star_full:    (star_before + star_seat + star_ca) / 3
     )
   end
-
-  # airline2.posts.create!(
-  #     airport_from: airport1.shuffle.first,
-  #     airport_to:   airport1.shuffle.second,
-  #     cabinclass:   seat,
-  #     review:       text,
-  #     star_before:  star_before,
-  #     star_seat:    star_seat,
-  #     star_ca:      star_ca,
-  #     star_full:    (star_before + star_seat + star_ca) / 3
-  # )
 end
