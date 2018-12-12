@@ -1,8 +1,7 @@
 <h1>Airlines List</h1>
-<% @airlines.each do |airline, i| %>
+<% @airlines.each_with_index do |airline, i| %>
   <div style="border: 1px solid #730E15; margin-bottom: 20px; padding: 10px; border-radius: 10px;">
-    <!--    <p>  -->
-    <p><%= link_to airline.name, airline_path(airline.id) %></p>
+    <p><%= i + 1 %>:<%= link_to airline.name, airline_path(airline.id) %></p>
     <p>総合評価:<%= to_all(airline.posts, :star_full) %></p>
     <p>口コミ数:<%= airline.posts.count %></p>
     <div style="border-bottom: 1px solid #DADADA; margin-bottom: 10px;">
