@@ -2,9 +2,9 @@
   <%= airline.name %><%= to_rank(airline) %><br />
 <% end %>
 <h1>Reviews</h1>
-<% @posts.each_with_index do |post, i| %>
+<% @posts.each.with_index(1) do |post, i| %>
   <div style="border: 1px solid #730E15; margin-bottom: 20px; padding: 10px; border-radius: 10px; padding-bottom: 50px;">
-    <%= i + 1 %>.<%= link_to post.airline.name, post.airline %><br/>
+    <%= i  %>.<%= link_to post.airline.name, post.airline %><br/>
     利用日:<%= post.created_at.strftime('%Y年%m月%d日') %><br/>
     出発地:<%= post.airport_from %> |
     到着地:<%= post.airport_to %><br/>

@@ -54,9 +54,9 @@
   <%= link_to "Post Review", new_post_path %>
 
   <div class="review_all">
-    <% @posts.each_with_index do |post, i| %>
+    <% @posts.each.with_index(1) do |post, i| %>
       <div class="review_one">
-        <%= i + 1 %> : <%= post.created_at.strftime('%Y年%m月%d日') %> 出発地:<%= post.airport_from %> |
+        <%= i %> : <%= post.created_at.strftime('%Y年%m月%d日') %> 出発地:<%= post.airport_from %> |
         到着地:<%= post.airport_to %><br/>
         <div class="row" style="width: 100%; text-align: center; margin-top: 10px;">
           <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">

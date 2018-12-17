@@ -5,3 +5,8 @@ class Airline < ApplicationRecord
   #   self.foundation.strftime("%Y年")
   # end
 end
+
+#次やることは、コントローラに記述しているスクレイピングのコードを切り離し、includeなどの形でうまく読み込むようにすること。
+# まずは情報収拾から初めて、ブランチをしっかりと切って行うこと。
+#
+# 現状での予想としては、app/lib内にモジュールを作成する形で分離させればいいのでは？という感じ。
