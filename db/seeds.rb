@@ -294,12 +294,12 @@ Airline.create!(name: "エアアジア・ジャパン", nationality: "日本", h
     airport1    = ["成田国際空港", "東京国際空港", "中部国際空港セントレア", "新千歳空港", "福岡空港", "関西国際空港"]
     seat        = ["Economy", "Business"].shuffle.first
     text        = Faker::Lorem.sentence(50)
-    star_before = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
-    star_seat   = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
-    star_ca     = [1.0, 2.0, 3.0, 4.0, 5.0].shuffle.first
+    star_before = [1.0, 2.0, 3.0, 4.0, 5.0].sample
+    star_seat   = [1.0, 2.0, 3.0, 4.0, 5.0].sample
+    star_ca     = [1.0, 2.0, 3.0, 4.0, 5.0].sample
     airline.posts.create!(
-        airport_from: airport1.shuffle.first,
-        airport_to:   airport1.shuffle.second,
+        airport_from: airport1.sample,
+        airport_to:   airport1.sample,
         cabinclass:   seat,
         review:       text,
         star_before:  star_before,
