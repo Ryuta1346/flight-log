@@ -1,4 +1,6 @@
 class Airline < ApplicationRecord
+  # require 'airline_info'
+  # include AirlineInfo
   has_many :posts, dependent: :destroy
 
   # def head
