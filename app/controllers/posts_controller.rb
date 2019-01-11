@@ -36,7 +36,8 @@ class PostsController < ApplicationController
           :review,
           :star_full,
           :star_seat,
-          :star_service)
+          :star_before,
+          :star_ca)
     end
 end
 

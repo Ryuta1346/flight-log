@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :airline
+
   # default_scope -> { order(created_at: :desc) }
 
   before_validation do
