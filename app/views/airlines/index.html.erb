@@ -22,14 +22,16 @@
 <table style="border: solid 3px">
   <tbody>
   <tr style="border: 2px solid;  text-align: center;">
+    <td style="width: 5%;border: 2px solid">No.</td>
     <td style="width: 20%;border: 2px solid">航空会社</td>
     <td style="width: 10%;border: 2px solid">総合評価</td>
     <td style="width: 10%;border: 2px solid">口コミ数</td>
     <td style="width: 20%;border: 2px solid">最高評価</td>
     <td style="width: 20%;border: 2px solid">最低評価</td>
   </tr>
-  <% @airlines.each do |airline| %>
+  <% @airlines.each.with_index(1) do |airline, i| %>
     <tr style="border: 1px solid; text-align:center;">
+      <td style="border-right: 2px solid;" rowspan="2"><%= i %></td>
       <td style="border-right: 2px solid;" rowspan="2"><%= link_to airline.name, airline_path(airline.id) %></td>
       <td style="border-right: 2px solid;" rowspan="2"><%= to_all(airline.posts, :star_full) %></td>
       <td style="border-right: 2px solid;" rowspan="2"><%= airline.posts.count %></td>
