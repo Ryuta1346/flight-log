@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts  = Post.all.order(created_at: :desc)
-    @airlines = Airline.all
+    @posts  = Post.all.order(created_at: :desc).includes(:airline)
+    @airlines = Airline.all.includes(:posts)
   end
 
   def show

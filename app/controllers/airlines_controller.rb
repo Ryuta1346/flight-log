@@ -8,7 +8,7 @@ class AirlinesController < ApplicationController
   include AirlineNews
 
   def index
-    @airlines = Airline.all
+    @airlines = Airline.includes(:posts).all
   end
 
   def new
