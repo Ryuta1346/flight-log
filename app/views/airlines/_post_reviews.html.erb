@@ -1,0 +1,35 @@
+<% posts.each.with_index(1) do |post, i| %>
+  <div class="review_one">
+    <%= i %> : <%= post.created_at.strftime('%Y年%m月%d日') %> 出発地:<%= post.airport_from %> |
+    到着地:<%= post.airport_to %><br/>
+    <div class="row" style="width: 100%; text-align: center; margin-top: 10px;">
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <div style="text-align: center; font-size: 14px">総合評価:</div>
+        <div style="text-align: center;"><%= to_star(post.star_full) %></div>
+      </div>
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <div style="text-align: center; font-size: 14px">搭乗まで:</div>
+        <div style="text-align: center;"><%= to_star(post.star_before) %></div>
+      </div>
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <div style="text-align: center; font-size: 14px">CA対応:</div>
+        <div style="text-align: center;"><%= to_star(post.star_ca) %></div>
+      </div>
+      <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
+        <div style="text-align: center; font-size: 14px">座席評価:</div>
+        <div style="text-align: center;"><%= to_star(post.star_seat) %></div>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <h2 style="font-size: 16px;">【レビュー】</h2>
+      <% if post.review.size > 100 %>
+        <%= truncate(post.review, length: 100) %>
+        <%= link_to "詳細を見る", post %>
+      <% elsif post.review.size == 0 %>
+        レビューはありません。
+      <% else %>
+        <%= post.review %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

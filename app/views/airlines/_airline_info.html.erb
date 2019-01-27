@@ -1,0 +1,37 @@
+<h3 style="text-align: center">平均総合評価:<%= to_all(airline.posts, :star_full) %></h3>
+<div class="airline">
+  <div class="airline-main-info">
+    <div class="airline-info1">
+      <div class="airline-content">所属アライアンス</div>
+      <div class="main-info"><%= airline.alliance %></div>
+    </div>
+    <div class="airline-info1">
+      <div class="airline-content">マイレージサービス</div>
+      <div class="main-info"><%= airline.flyer_program %></div>
+    </div>
+    <div class="airline-info1">
+      <div class="airline-content">設立年</div>
+      <div class="main-info"><%= airline.foundation %></div>
+    </div>
+    <div class="airline-info1">
+      <div class="airline-content">航空会社の本社場所</div>
+      <div class="main-info"><%= airline.headquarters %></div>
+    </div>
+    <div class="airline-info1">
+      <div class="airline-content">航空会社の拠点空港</div>
+      <div class="main-info"><%= airline.base %></div>
+    </div>
+    <div class="airline-info1">
+      <div class="airline-content"><%= airline.name %>の航空券を探す</div>
+      <div class="main-info"><%= link_to "お得に航空券を探す", airline.url %></div>
+    </div>
+  </div>
+</div>
+<div class="airline-summary">
+  <div class="summary-title">航空会社の概要</div>
+  <div class="quoted"><%= link_to "引用:Wikipedia", @overview %></div>
+  <div class="summary">
+    <%= simple_format(airline.summary) %>
+    <%#= simple_format(@overview) %>
+  </div>
+</div>

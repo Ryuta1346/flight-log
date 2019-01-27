@@ -1,92 +1,13 @@
 <h2 style="text-align: center"><%= @airline.name %></h2>
 <div class="container">
-  <h3 style="text-align: center">平均総合評価:<%= to_all(@airline.posts, :star_full) %></h3>
-  <div class="airline">
-    <div class="airline-main-info">
-      <div class="airline-info1">
-        <div class="airline-content">所属アライアンス</div>
-        <div class="main-info"><%= @airline.alliance %></div>
-      </div>
-      <div class="airline-info1">
-        <div class="airline-content">マイレージサービス</div>
-        <div class="main-info"><%= @airline.flyer_program %></div>
-      </div>
-      <div class="airline-info1">
-        <div class="airline-content">設立年</div>
-        <div class="main-info"><%= @airline.foundation %></div>
-      </div>
-      <div class="airline-info1">
-        <div class="airline-content">航空会社の本社場所</div>
-        <div class="main-info"><%= @airline.headquarters %></div>
-      </div>
-      <div class="airline-info1">
-        <div class="airline-content">航空会社の拠点空港</div>
-        <div class="main-info"><%= @airline.base %></div>
-      </div>
-      <div class="airline-info1">
-        <div class="airline-content"><%= @airline.name %>の航空券を探す</div>
-        <div class="main-info"><%= link_to "お得に航空券を探す", @airline.url %></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="airline-summary">
-    <div class="summary-title">航空会社の概要</div>
-    <div class="quoted"><%= link_to "引用:Wikipedia", @overview %></div>
-    <div class="summary">
-      <%= simple_format(@airline.summary) %>
-      <%#= simple_format(@overview) %>
-    </div>
-  </div>
-
+  <%= render partial: 'airlines/airline_info', locals: { airline: @airline } %>
   <div class="airline-news">
-    <h2 class="news-title">【News】</h2>
-    <div class="news">
-      <ul>
-        <% @articles.each do |article| %>
-          <li><%= link_to article.text, article[:href] %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render partial: 'airlines/airline_news', locals: { articles: @articles } %>
   </div>
 
   <%= link_to "Post Review", new_post_path %>
 
   <div class="review_all">
-    <% @posts.each.with_index(1) do |post, i| %>
-      <div class="review_one">
-        <%= i %> : <%= post.created_at.strftime('%Y年%m月%d日') %> 出発地:<%= post.airport_from %> |
-        到着地:<%= post.airport_to %><br/>
-        <div class="row" style="width: 100%; text-align: center; margin-top: 10px;">
-          <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <div style="text-align: center; font-size: 14px">総合評価:</div>
-            <div style="text-align: center;"><%= to_star(post.star_full) %></div>
-          </div>
-          <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <div style="text-align: center; font-size: 14px">搭乗まで:</div>
-            <div style="text-align: center;"><%= to_star(post.star_before) %></div>
-          </div>
-          <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <div style="text-align: center; font-size: 14px">CA対応:</div>
-            <div style="text-align: center;"><%= to_star(post.star_ca) %></div>
-          </div>
-          <div class="col-md-2" style="border-bottom: 1px solid #DADADA; margin:0 10px 0 10px; text-align: center;">
-            <div style="text-align: center; font-size: 14px">座席評価:</div>
-            <div style="text-align: center;"><%= to_star(post.star_seat) %></div>
-          </div>
-        </div>
-        <div style="margin-top: 20px">
-          <h2 style="font-size: 16px;">【レビュー】</h2>
-          <% if post.review.size > 100 %>
-            <%= truncate(post.review, length: 100) %>
-            <%= link_to "詳細を見る", post %>
-          <% elsif post.review.size == 0 %>
-            レビューはありません。
-          <% else %>
-            <%= post.review %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render partial: 'airlines/post_reviews', locals: { posts: @posts } %>
   </div>
 </div>

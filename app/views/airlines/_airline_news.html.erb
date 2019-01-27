@@ -1,0 +1,8 @@
+<h2 class="news-title">【News】</h2>
+<div class="news">
+  <ul>
+    <% articles.each do |article| %>
+      <li><%= link_to article.text, article[:href] %></li>
+    <% end %>
+  </ul>
+</div>
