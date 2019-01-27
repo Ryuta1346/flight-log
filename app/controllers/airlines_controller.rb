@@ -2,7 +2,6 @@ class AirlinesController < ApplicationController
   require 'nokogiri'
   require 'open-uri'
   require 'unirest'
-  # require 'rapidapisdk'
   require 'airline_info'
   require 'airline_news'
   include AirlineInfo
@@ -30,7 +29,6 @@ class AirlinesController < ApplicationController
   def show
     @airline = Airline.find(params[:id])
     @posts   = @airline.posts.order(created_at: :desc)
-    # # @reviews    = Post.find_by(airline_id: params[:airline_id])
     airline_url = URI.encode(@airline.name)
     @overview   = airline_crawler(airline_url)
     @articles   = news(airline_url)
