@@ -31,7 +31,7 @@
   <div class="summary-title">航空会社の概要</div>
   <div class="quoted"><%= link_to "引用:Wikipedia", @overview %></div>
   <div class="summary">
-    <% simple_format(airline.summary) %>
-    <%= simple_format(@overview) %>
+    <%= simple_format(airline.summary) %>
+    <% simple_format(@overview) %>
   </div>
 </div>
