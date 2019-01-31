@@ -1,9 +1,9 @@
 class AirlinesController < ApplicationController
-  require 'nokogiri'
-  require 'open-uri'
-  require 'unirest'
-  require 'airline_info'
-  require 'airline_news'
+  # require 'nokogiri'
+  # require 'open-uri'
+  # require 'unirest'
+  # require 'airline_info'
+  # require 'airline_news'
   include AirlineInfo
   include AirlineNews
 
