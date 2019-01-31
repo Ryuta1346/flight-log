@@ -1,4 +1,7 @@
 module AirlineNews
+  require 'nokogiri'
+  require 'open-uri'
+
   def news(url)
     news_url     = "https://news.yahoo.co.jp/search/;_ylt=A2RCAwoB5gNcdnsAZwiEmuZ7?p=#{url}&vaop=a&to=0&st=n&c_n=dom&c_n=c_int&c_n=bus&c_n=c_sci&c_n=loc"
     charset      = nil

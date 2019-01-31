@@ -1,4 +1,7 @@
 class AirlinesController < ApplicationController
+  require 'airline_news'
+  # require 'airline_info'
+
   # include AirlineInfo
   include AirlineNews
 
