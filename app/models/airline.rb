@@ -1,15 +1,28 @@
 class Airline < ApplicationRecord
-  # require 'airline_info'
-  # include AirlineInfo
+  require 'nokogiri'
+  require 'open-uri'
   has_many :posts, dependent: :destroy
 
-  # def head
-  #   self.foundation.strftime("%Y年")
+  # def self.airline_crawler(url) <- Wikipediaがクローラー禁止のため使用せず
+  #   wiki_url  = "https://ja.wikipedia.org/wiki/#{url}"
+  #   charset   = nil
+  #   html      = open(wiki_url) do |f|
+  #     charset = f.charset
+  #     f.read
+  #   end
+  #   doc      = Nokogiri::HTML.parse(html, nil, charset)
+  #   doc_overview  = doc.xpath('//*[@id="mw-content-text"]/div/p')[0..3]
+  #   overview = doc_overview.inner_text.gsub(/\[\d+]/, "")
   # end
-end
 
-#次やることは、コントローラに記述しているスクレイピングのコードを切り離し、includeなどの形でうまく読み込むようにすること。
-# まずは情報収拾から初めて、ブランチをしっかりと切って行うこと。
-#
-# 現状での予想としては、app/lib内にモジュールを作成する形で分離させればいいのでは？という感じ。
-# ->モジュールではなく通常のファイルとして設定し、requireで読み込ませる
+  def self.news(url)
+    news_url     = "https://news.yahoo.co.jp/search/;_ylt=A2RCAwoB5gNcdnsAZwiEmuZ7?p=#{url}&vaop=a&to=0&st=n&c_n=dom&c_n=c_int&c_n=bus&c_n=c_sci&c_n=loc"
+    charset      = nil
+    html         = open(news_url) do |f|
+      charset = f.charset
+      f.read
+    end
+    airline_news = Nokogiri::HTML.parse(html, nil, charset)
+    articles    = airline_news.xpath('//*[@id="NSm"]/div/h2/a')[0..6]
+  end
+end

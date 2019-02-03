@@ -1,9 +1,4 @@
 class AirlinesController < ApplicationController
-  require 'airline_news'
-  # require 'airline_info'
-
-  # include AirlineInfo
-  include AirlineNews
 
   def index
     @airlines = Airline.includes(:posts).all
@@ -28,8 +23,8 @@ class AirlinesController < ApplicationController
     @airline    = Airline.find(params[:id])
     @posts      = @airline.posts.order(created_at: :desc)
     airline_url = URI.encode(@airline.name)
-    # @overview   = airline_crawler(airline_url)
-    @articles   = news(airline_url)
+    # @overview   = Airline.airline_crawler(airline_url)
+    @articles   = Airline.news(airline_url)
   end
 
   def edit
