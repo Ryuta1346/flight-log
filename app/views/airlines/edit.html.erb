@@ -1,55 +1,53 @@
 <h2>Airline Edit Form</h2>
-<%= form_for(@airline) do |airline| %>
-  <%= form_for(@airline) do |f| %>
-    <div class="form-row">
-      <div class="form-group col-md-5">
-        <%= f.label :Foundation %> :
-        <%= f.date_select :foundation, discard_day: true, discard_month: true, start_year: 1900, class: "form-control" %>
-      </div>
+<%= form_for(@airline) do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <%= f.label :Foundation %> :
+      <%= f.date_select :foundation, discard_day: true, discard_month: true, start_year: 1900, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <%= f.label :region %>
+      <%= f.text_field :region, autofocus: true, autocomplete: "region", placeholder: "region", class: "form-control" %>
     </div>
 
-    <div class="form-row">
-      <div class="form-group col-md-5">
-        <%= f.label :region %>
-        <%= f.text_field :region, autofocus: true, autocomplete: "region", placeholder: "region", class: "form-control" %>
-      </div>
+    <div class="form-group col-md-5">
+      <%= f.label :nationality %>
+      <%= f.text_field :nationality, autofocus: true, autocomplete: "nationality", placeholder: "Nationality", class: "form-control" %>
+    </div>
+  </div>
 
-      <div class="form-group col-md-5">
-        <%= f.label :nationality %>
-        <%= f.text_field :nationality, autofocus: true, autocomplete: "nationality", placeholder: "Nationality", class: "form-control" %>
-      </div>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <%= f.label :headquarters %>
+      <%= f.text_field :headquarters, autofocus: true, autocomplete: "headquarters", placeholder: "Headquarters", class: "form-control" %>
     </div>
 
-    <div class="form-row">
-      <div class="form-group col-md-5">
-        <%= f.label :headquarters %>
-        <%= f.text_field :headquarters, autofocus: true, autocomplete: "headquarters", placeholder: "Headquarters", class: "form-control" %>
-      </div>
-
-      <div class="form-group col-md-5">
-        <%= f.label :Base %>
-        <%= f.text_field :base, autofocus: true, autocomplete: "base", placeholder: "Base", class: "form-control" %>
-      </div>
+    <div class="form-group col-md-5">
+      <%= f.label :Base %>
+      <%= f.text_field :base, autofocus: true, autocomplete: "base", placeholder: "Base", class: "form-control" %>
     </div>
+  </div>
 
-    <div class="form-row">
-      <div class="form-group col-md-5">
-        <%= f.label :Main_Line %>
-        <%= f.text_field :main_line, autofocus: true, autocomplete: "main_line", placeholder: "Main Line", class: "form-control" %>
-      </div>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <%= f.label :Main_Line %>
+      <%= f.text_field :main_line, autofocus: true, autocomplete: "main_line", placeholder: "Main Line", class: "form-control" %>
     </div>
+  </div>
 
-    <div class="form-row">
-      <div class="form-group col-md-10">
-        <%= f.label :Summary %>
-        <%= f.text_area :summary, autofocus: true, autocomplete: "Summary", placeholder: "Summary", class: "form-control" %>
-      </div>
+  <div class="form-row">
+    <div class="form-group col-md-10">
+      <%= f.label :Summary %>
+      <%= f.text_area :summary, autofocus: true, autocomplete: "Summary", placeholder: "Summary", class: "form-control" %>
     </div>
+  </div>
 
-    <div class="form-row">
-      <div class="form-group col-md-10" style="text-align: center">
-        <%= f.submit "Add Airline Information", class: "btn btn-lg btn-success" %>
-      </div>
+  <div class="form-row">
+    <div class="form-group col-md-10" style="text-align: center">
+      <%= f.submit "Add Airline Information", class: "btn btn-lg btn-success" %>
     </div>
-  <% end %>
+  </div>
 <% end %>

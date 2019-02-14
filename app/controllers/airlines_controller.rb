@@ -24,7 +24,7 @@ class AirlinesController < ApplicationController
     @posts      = @airline.posts.order(created_at: :desc)
     airline_url = URI.encode(@airline.name)
     # @overview   = Airline.airline_crawler(airline_url)
-    @articles   = Airline.news(airline_url)
+    @articles = Airline.news(airline_url)
   end
 
   def edit
